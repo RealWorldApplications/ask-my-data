@@ -1,7 +1,7 @@
 name: ask_my_data_starter
 description: >
-  Ask My Data workshop starter — DevFest Florida Hackathon 2026.
-  UI-only chat app. No Firebase yet; that's Module 0.
+  Ask My Data workshop — completed solution.
+  Firebase + Gemini function calling fully wired up.
 publish_to: 'none'
 version: 0.1.0
 
@@ -12,6 +12,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  firebase_core: ^4.15.0
+  cloud_firestore: ^6.10.0
+  firebase_ai: ^4.0.0
+  firebase_app_check: ^0.4.8
+  # Added by `flutterfire configure` / `flutter pub add`:
+  # firebase_core:
+  # cloud_firestore:
+  # firebase_ai:
 
 dev_dependencies:
   flutter_test:
@@ -21,12 +29,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# --- Module 0 checkpoint -----------------------------------------------
-# Once you've created a Firebase project and run `flutterfire configure`,
-# add the Firebase packages with:
+# --- Setup ---------------------------------------------------------------
+# This project won't compile out of the box. Before running it:
 #
-#   flutter pub add firebase_core cloud_firestore firebase_ai
-#
-# Using `flutter pub add` instead of hand-typing versions here keeps you
-# on whatever is current when you run the workshop.
-# -------------------------------------------------------------------------
+#   1. Create (or reuse) a Firebase project with Firestore + Firebase AI
+#      Logic enabled (Gemini Developer API provider, free Spark plan).
+#   2. Seed the `restaurants` collection — see data/README.md.
+#   3. From this folder, run: flutterfire configure
+#   4. flutter pub add firebase_core cloud_firestore firebase_ai
+#   5. flutter run
+# ---------------------------------------------------------------------------

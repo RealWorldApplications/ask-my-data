@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// A single chat bubble.
+import 'services/gemini_chat_service.dart';
+
 class ChatMessage {
   ChatMessage({required this.text, required this.fromUser});
 
@@ -19,6 +20,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final List<ChatMessage> _messages = [];
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
+  final GeminiChatService _chatService = GeminiChatService();
   bool _isThinking = false;
 
   Future<void> _send() async {
@@ -32,16 +34,12 @@ class _ChatScreenState extends State<ChatScreen> {
     _controller.clear();
     _scrollToBottom();
 
-    // ---------------------------------------------------------------
-    // MODULE 1: replace this placeholder with a real call to Gemini via
-    // FirebaseAI.googleAI().generativeModel(...).startChat().sendMessage(...)
-    //
-    // MODULE 2: once that's working, swap in a GeminiChatService that
-    // registers the `queryRestaurants` tool so answers are grounded in
-    // Firestore instead of guessed. See the `solution` branch
-    // (`lib/services/gemini_chat_service.dart`) for the target shape.
-    // ---------------------------------------------------------------
-    final reply = await _placeholderReply(text);
+    String reply;
+    try {
+      reply = await _chatService.ask(text);
+    } catch (e) {
+      reply = "Something went wrong talking to Gemini: $e";
+    }
 
     if (!mounted) return;
     setState(() {
@@ -49,12 +47,6 @@ class _ChatScreenState extends State<ChatScreen> {
       _isThinking = false;
     });
     _scrollToBottom();
-  }
-
-  Future<String> _placeholderReply(String prompt) async {
-    await Future.delayed(const Duration(milliseconds: 400));
-    return "I'm just a placeholder for now — no Gemini connected yet. "
-        "That's Module 1! (You asked: \"$prompt\")";
   }
 
   void _scrollToBottom() {
