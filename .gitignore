@@ -32,5 +32,9 @@ migrate_working_dir/
 # Symbol processing related
 symbols/
 
-# Environment files
+# Environment & credentials
 .env*
+**/serviceAccountKey.json
+data/node_modules/
+data/package-lock.json
+

@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Noodle & Nine",
+    "cuisine": "Vietnamese",
+    "neighborhood": "Mills 50",
+    "priceRange": "$",
+    "rating": 4.6,
+    "description": "Pho and banh mi counter-service spot, famous for its lemongrass broth."
+  },
+  {
+    "name": "Sabai Table",
+    "cuisine": "Thai",
+    "neighborhood": "Mills 50",
+    "priceRange": "$$",
+    "rating": 4.4,
+    "description": "Family-run Thai kitchen known for green curry and mango sticky rice."
+  },
+  {
+    "name": "The Rosewater Room",
+    "cuisine": "New American",
+    "neighborhood": "Winter Park",
+    "priceRange": "$$$",
+    "rating": 4.7,
+    "description": "Upscale small plates with a seasonal, farm-driven menu."
+  },
+  {
+    "name": "Park Ave Espresso Bar",
+    "cuisine": "Cafe",
+    "neighborhood": "Winter Park",
+    "priceRange": "$",
+    "rating": 4.3,
+    "description": "Brunch and espresso drinks on a sunny patio near Central Park."
+  },
+  {
+    "name": "Ironwood BBQ Co.",
+    "cuisine": "BBQ",
+    "neighborhood": "Milk District",
+    "priceRange": "$$",
+    "rating": 4.5,
+    "description": "Smoked brisket and ribs, picnic-table seating, weekend live music."
+  },
+  {
+    "name": "Milk District Taqueria",
+    "cuisine": "Mexican",
+    "neighborhood": "Milk District",
+    "priceRange": "$",
+    "rating": 4.4,
+    "description": "Late-night tacos al pastor and a rotating salsa bar."
+  },
+  {
+    "name": "Marble & Basil",
+    "cuisine": "Italian",
+    "neighborhood": "Thornton Park",
+    "priceRange": "$$$",
+    "rating": 4.6,
+    "description": "Handmade pasta and a wood-fired oven, popular for date nights."
+  },
+  {
+    "name": "Thornton Park Diner",
+    "cuisine": "American",
+    "neighborhood": "Thornton Park",
+    "priceRange": "$$",
+    "rating": 4.1,
+    "description": "All-day breakfast classics in a retro diner setting."
+  },
+  {
+    "name": "Ivanhoe Curry House",
+    "cuisine": "Indian",
+    "neighborhood": "Ivanhoe Village",
+    "priceRange": "$$",
+    "rating": 4.5,
+    "description": "Generous thali plates and a build-your-own curry bar."
+  },
+  {
+    "name": "Lakeview Sushi Room",
+    "cuisine": "Japanese",
+    "neighborhood": "Ivanhoe Village",
+    "priceRange": "$$$",
+    "rating": 4.7,
+    "description": "Omakase counter overlooking Lake Ivanhoe, reservations recommended."
+  },
+  {
+    "name": "College Park Pancake Co.",
+    "cuisine": "American",
+    "neighborhood": "College Park",
+    "priceRange": "$",
+    "rating": 4.2,
+    "description": "Weekend brunch line out the door for the sourdough pancake stack."
+  },
+  {
+    "name": "Audubon Greens",
+    "cuisine": "Vegetarian",
+    "neighborhood": "Audubon Park",
+    "priceRange": "$$",
+    "rating": 4.3,
+    "description": "Plant-forward bowls and a juice bar next to the farmers market."
+  }
+]

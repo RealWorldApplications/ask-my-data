@@ -38,8 +38,8 @@ class _ChatScreenState extends State<ChatScreen> {
     //
     // MODULE 2: once that's working, swap in a GeminiChatService that
     // registers the `queryRestaurants` tool so answers are grounded in
-    // Firestore instead of guessed. See instructor-reference/lib/services/
-    // gemini_chat_service.dart for the target shape.
+    // Firestore instead of guessed. See the `solution` branch
+    // (`lib/services/gemini_chat_service.dart`) for the target shape.
     // ---------------------------------------------------------------
     final reply = await _placeholderReply(text);
 
