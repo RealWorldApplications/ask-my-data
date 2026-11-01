@@ -2,7 +2,9 @@
 
 DevFest Florida Hackathon 2026 — A working Flutter chat UI with **no Firebase wired in yet** (you'll add that live in Module 0!).
 
-> **Looking for the completed code?** Switch to the [`solution`](../../tree/solution) branch (`git checkout solution`) to see the finished app with Firebase AI Logic and Firestore function calling wired up.
+> 📄 **[Workshop Reference Guide & Copy-Paste Commands (Google Doc)](https://docs.google.com/document/d/1aHt5OGAO6Y5mp6QGx0JRucH-H0J79GU0nEaNu5ByKwA/edit?usp=sharing)**
+>
+> 💡 **Looking for the completed code?** Switch to the [`solution`](../../tree/solution) branch (`git checkout solution`) to see the finished app with Firebase AI Logic and Firestore function calling wired up.
 
 ## Run it now
 
