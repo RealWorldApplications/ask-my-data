@@ -8,29 +8,12 @@ not real businesses.
 
 ## Seeding it into Firestore
 
-```
-npm install firebase-admin
-```
+After running `firebase login` and `flutterfire configure` (from Module 0), simply run:
 
-Then, in the Firebase console: **Project settings → Service accounts → Generate
-new private key**, and save the file as `serviceAccountKey.json` in this folder.
-(It's a credential — don't commit it to git. Add it to `.gitignore`.)
-
-```
-node seed.js
+```bash
+node data/seed.js
 ```
 
-This writes all 12 documents into a `restaurants` collection with
-auto-generated IDs.
+`seed.js` automatically reads your `projectId` from `lib/firebase_options.dart` and uses your `firebase login` session (or Firestore Test Mode rules) to upload all 12 documents into the `restaurants` collection — **no `npm install` or `serviceAccountKey.json` download required!**
 
-## If attendees are creating their own Firebase projects (90-min+ slots)
-
-Each attendee runs `npm install firebase-admin` and `node seed.js` against
-their own project during Module 0, using their own service account key. It
-takes under a minute and doubles as a quick, low-stakes first touch of
-Firestore before the AI part of the workshop starts.
-
-## If you're using a shared pre-provisioned project instead (tight 45–60 min slots)
-
-Run this once yourself ahead of time — attendees just point their Flutter app
-at the shared project's config and skip this step entirely.
+*(Optional fallback: If you prefer using the Firebase Admin SDK with a service account, you can still run `npm install firebase-admin`, place `serviceAccountKey.json` in `data/`, and run `node seed.js`.)*

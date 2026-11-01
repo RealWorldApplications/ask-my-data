@@ -17,17 +17,15 @@ You'll get a working chat screen that replies with a placeholder message. That's
 
 ### Module 0 — Firebase fundamentals + setup
 1. Create a Firebase project in the console (free Spark plan, no credit card)
-2. Enable **Firestore** and seed the Orlando restaurants dataset from [`data/`](data/README.md):
-   ```bash
-   cd data
-   npm install firebase-admin
-   # Place your serviceAccountKey.json in data/ (see data/README.md)
-   node seed.js
-   cd ..
-   ```
+2. Enable **Firestore** (in Test Mode)
 3. Enable **Firebase AI Logic** → choose the **Gemini Developer API** provider (stays on Spark, no billing)
 4. Set up the **App Check** debug provider for local development
-5. Run `flutterfire configure` in the project root
+5. Connect your Flutter project and seed the Orlando restaurants dataset:
+   ```bash
+   firebase login
+   flutterfire configure
+   node data/seed.js
+   ```
 6. Add the Firebase packages:
    ```bash
    flutter pub add firebase_core cloud_firestore firebase_ai firebase_app_check
