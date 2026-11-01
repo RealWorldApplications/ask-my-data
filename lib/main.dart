@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
@@ -12,10 +13,15 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // Activate App Check with debug providers for local development
+  // Activate App Check:
+  // - Local runs (`kDebugMode`): uses WebDebugProvider (registers a debug token in console).
+  // - Hosted web app (`flutter build web`): uses Google Cloud Fraud Defense
+  //   (`ReCaptchaEnterpriseProvider('YOUR_FRAUD_DEFENSE_SITE_KEY')`).
   try {
     await FirebaseAppCheck.instance.activate(
-      providerWeb: WebDebugProvider(),
+      providerWeb: kDebugMode
+          ? WebDebugProvider()
+          : ReCaptchaEnterpriseProvider('YOUR_FRAUD_DEFENSE_SITE_KEY'),
       providerApple: const AppleDebugProvider(),
       providerAndroid: const AndroidDebugProvider(),
     );
