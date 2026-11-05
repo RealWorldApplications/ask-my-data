@@ -14,9 +14,11 @@ Because every attendee connects to their own Firebase project, `lib/firebase_opt
 2. From the project root, generate your `lib/firebase_options.dart` (this also registers your Web app in Firebase):
    ```bash
    firebase login
-   flutterfire configure
+   flutterfire configure --platforms=web
    ```
-   > **Tip:** If you get a `flutterfire: command not found` error, either run `dart pub global run flutterfire_cli:flutterfire configure` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
+   > **Tips:**
+   > - If you get `flutterfire: command not found`, run `dart pub global run flutterfire_cli:flutterfire configure --platforms=web` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
+   > - If you get `Failed to create Web app` (rate limit when many attendees run it at once), click the **`</>` (Web)** icon on the Firebase Console Project Overview page to register your Web app first, then re-run `flutterfire configure --platforms=web`.
 3. Set up **App Check** in the Firebase Console (**App Check → Apps**): click `⋮` next to your Web app → **Manage debug tokens** for `localhost`, or **Register → Fraud Defense** for Firebase Hosting.
 4. **Seed the dataset** into your Firestore database (`node data/seed.js`) — see [`data/README.md`](data/README.md).
 5. Run the app:
