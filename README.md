@@ -34,9 +34,10 @@ You'll get a working chat screen that replies with a placeholder message. That's
    ```bash
    flutter pub add firebase_core cloud_firestore firebase_ai firebase_app_check
    ```
-7. Set up **App Check** in the Firebase Console (**App Check → Apps**):
-   - **For local runs (`localhost`):** Click the `⋮` (three-dot menu) next to your Web app → **Manage debug tokens** and register your debug token.
-   - **For Firebase Hosting deployment:** Click **Register** → choose **Fraud Defense (formerly reCAPTCHA Enterprise)** and paste your Website Key ID.
+7. Initialize Firebase & **App Check** in `lib/main.dart`:
+   - Copy the `main.dart` snippet from **Step 4** of the [Reference Guide](https://docs.google.com/document/d/1aHt5OGAO6Y5mp6QGx0JRucH-H0J79GU0nEaNu5ByKwA/edit?usp=sharing) into `lib/main.dart`.
+   - In the Firebase Console (**App Check → Apps**), click the `⋮` (three-dot menu) next to your Web app → **Manage debug tokens**, generate a debug token for `localhost`, and paste it directly into `WebDebugProvider(debugToken: 'YOUR_DEBUG_TOKEN')` in `lib/main.dart`.
+   - *(Optional for Firebase Hosting deployment: click **Register → Fraud Defense** and paste your Website Key ID into `ReCaptchaEnterpriseProvider('YOUR_FRAUD_DEFENSE_SITE_KEY')`.)*
 8. Seed the Orlando restaurants dataset into Firestore:
    ```bash
    node data/seed.js
