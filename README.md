@@ -27,6 +27,7 @@ You'll get a working chat screen that replies with a placeholder message. That's
    firebase login
    flutterfire configure
    ```
+   > **Tip:** If you get a `flutterfire: command not found` error, either run `dart pub global run flutterfire_cli:flutterfire configure` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
 6. Add the Firebase packages:
    ```bash
    flutter pub add firebase_core cloud_firestore firebase_ai firebase_app_check
