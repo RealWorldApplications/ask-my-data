@@ -25,9 +25,11 @@ You'll get a working chat screen that replies with a placeholder message. That's
 5. Connect your Flutter project to Firebase (this registers your Web app in Firebase):
    ```bash
    firebase login
-   flutterfire configure
+   flutterfire configure --platforms=web
    ```
-   > **Tip:** If you get a `flutterfire: command not found` error, either run `dart pub global run flutterfire_cli:flutterfire configure` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
+   > **Tips:**
+   > - If you get `flutterfire: command not found`, run `dart pub global run flutterfire_cli:flutterfire configure --platforms=web` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
+   > - If you get `Failed to create Web app` (rate limit when many attendees run it at once), click the **`</>` (Web)** icon on the Firebase Console Project Overview page to register your Web app first, then re-run `flutterfire configure --platforms=web`.
 6. Add the Firebase packages:
    ```bash
    flutter pub add firebase_core cloud_firestore firebase_ai firebase_app_check
