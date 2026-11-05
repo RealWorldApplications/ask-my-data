@@ -2,18 +2,25 @@
 
 This is the finished "Ask My Data" app: Firebase wired up, Gemini chat working, and the `queryRestaurants` function-calling tool fully implemented against Firestore.
 
+> 📄 **[Workshop Reference Guide & Copy-Paste Commands (Google Doc)](https://docs.google.com/document/d/1aHt5OGAO6Y5mp6QGx0JRucH-H0J79GU0nEaNu5ByKwA/edit?usp=sharing)**
+>
 > **Looking for the starter project?** Switch back to the [`main`](../../tree/main) branch (`git checkout main`).
 
 ## Setup
 
 Because every attendee connects to their own Firebase project, `lib/firebase_options.dart` is not checked into git. To run this branch:
 
-1. **Seed the dataset** into your Firestore database — see [`data/README.md`](data/README.md).
-2. Create (or reuse) a Firebase project with **Firestore** and **Firebase AI Logic** enabled. Choose the **Gemini Developer API** provider when prompted (stays on the free Spark plan, no billing account needed).
-3. Set up the **App Check** debug provider for local development (required — Firebase AI Logic is deactivated without it).
-4. From the project root, generate your `lib/firebase_options.dart` and run:
+1. Create (or reuse) a Firebase project with **Firestore** and **Firebase AI Logic** enabled. Choose the **Gemini Developer API** provider when prompted (stays on the free Spark plan, no billing account needed).
+2. From the project root, generate your `lib/firebase_options.dart` (this also registers your Web app in Firebase):
    ```bash
+   firebase login
    flutterfire configure
+   ```
+   > **Tip:** If you get a `flutterfire: command not found` error, either run `dart pub global run flutterfire_cli:flutterfire configure` directly, or add Dart's global bin folder to your PATH (`export PATH="$PATH":"$HOME/.pub-cache/bin"` on Mac/Linux).
+3. Set up **App Check** in the Firebase Console (**App Check → Apps**): click `⋮` next to your Web app → **Manage debug tokens** for `localhost`, or **Register → Fraud Defense** for Firebase Hosting.
+4. **Seed the dataset** into your Firestore database (`node data/seed.js`) — see [`data/README.md`](data/README.md).
+5. Run the app:
+   ```bash
    flutter pub get
    flutter run -d chrome
    ```
